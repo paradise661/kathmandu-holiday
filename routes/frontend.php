@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\ContactsController;
 use App\Http\Controllers\Admin\PackageInquiryController;
-use App\Http\Controllers\FrontendController;
-use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Frontend Routes
@@ -32,4 +33,5 @@ Route::get('youtube',[FrontendController::class, 'youtube'])->name('youtubelinks
 
 Route::post('/inquiry', [ContactsController::class, 'inquiry'])->name('inquiry');
 Route::post('/pkbooking', [PackageInquiryController::class, 'pkbooking'])->name('pkbooking');
+Route::get('/package/{id}/pdf', [PackageController::class, 'generate'])->name('package.pdf');
 

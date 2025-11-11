@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
+use File;
+use App\Models\Package;
+use App\Models\Activity;
+use App\Models\PackageFaq;
+use App\Models\Destination;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Models\ItenaryPackage;
+use App\Models\ActivityPackage;
+use App\Models\PackageActivity;
+use Barryvdh\DomPDF\Facade\Pdf;
+use App\Models\DestinationPackage;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGlobalRequest;
 use App\Http\Requests\UpdateGlobalRequest;
-use App\Models\Activity;
-use App\Models\ActivityPackage;
-use App\Models\Destination;
-use App\Models\DestinationPackage;
-use App\Models\ItenaryPackage;
-use App\Models\Package;
-use App\Models\PackageActivity;
-use App\Models\PackageFaq;
-use Illuminate\Http\Request;
-use File;
-use Illuminate\Support\Str;
 
 class PackageController extends Controller
 {
@@ -157,7 +158,6 @@ class PackageController extends Controller
             ],
             $request->all()
         );
-
         return redirect()->route('packages.edit', $package->id)->with('message', 'Update Successfully');
     }
 
@@ -227,5 +227,16 @@ class PackageController extends Controller
             }
         }
         return redirect()->route('packages.index')->with('message', 'Delete Successfully');
+    }
+
+    public function generate($id)
+    {
+        $package = Package::with(['itenaries', 'faqs', 'activity', 'category'])
+            ->findOrFail($id);
+
+        $pdf = Pdf::loadView('frontend.package.pdf', compact('package'))
+            ->setPaper('a4', 'portrait');
+
+        return $pdf->stream($package->name . '.pdf');
     }
 }

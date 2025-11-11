@@ -8475,3 +8475,16 @@ figure.logo img {
 .text-depature {
     color: #015191;
 }
+
+.title-section {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-head {
+    width: auto !important;
+}
+
+.print-btn {
+    border: 1px solid gray;
+}
