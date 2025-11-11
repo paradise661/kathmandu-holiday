@@ -151,6 +151,10 @@
                                     <button class="nav-link" id="seo-tab" data-bs-toggle="tab" data-bs-target="#nav-seo"
                                         type="button" role="tab" aria-controls="seo" aria-selected="true">SEO</button>
                                 </li>
+                                <li class="nav-item" role="departure">
+                                    <button class="nav-link" id="departure-tab" data-bs-toggle="tab" data-bs-target="#nav-departure" type="button"
+                                        role="tab" aria-controls="departure" aria-selected="true">Fixed Departure</button>
+                                </li>
                             </ul>
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade" id="nav-overview" role="tabpanel"
@@ -411,6 +415,21 @@
                                             </div>
                                         @enderror
                                     </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-departure" role="tabpanel" aria-labelledby="nav-departure-tab">
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="departure_id">Departure Link</label>
+                                        <select name="departure_id" id="departure_id" class="form-control @error('departure_id') is-invalid @enderror">
+                                            <option value="">Select Departure</option>
+                                            @foreach($departures as $departure)
+                                                <option value="{{ $departure->id }}" {{ old('departure_id', isset($package) ? $package->departure_id : '') == $departure->id ? 'selected' : '' }}>
+                                                    {{ $departure->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
                                 </div>
 
                                 <div class="tab-pane fade show active" id="nav-activity" role="tabpanel"

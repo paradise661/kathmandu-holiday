@@ -17,6 +17,7 @@ class Package extends Model
         'gallery',
         'status',
         'description',
+        'departure_id',
         'short_description',
         'map',
         'discount',
@@ -56,5 +57,9 @@ class Package extends Model
     public function activity()
     {
         return $this->hasOne(PackageActivity::class);
+    }
+    public function departure()
+    {
+        return $this->belongsTo(Departure::class);
     }
 }

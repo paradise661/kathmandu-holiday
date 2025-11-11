@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Departure;
 use File;
 use App\Models\Package;
 use App\Models\Activity;
@@ -38,7 +39,8 @@ class PackageController extends Controller
         $activities = Activity::where('parent_id', 0)->get();
         $destinationPackages = [];
         $activityPackages = [];
-        return view('admin.package.create', compact('destinations', 'activities', 'destinationPackages', 'activityPackages'));
+        $departures = Departure::all();
+        return view('admin.package.create', compact('destinations', 'activities', 'destinationPackages', 'activityPackages','departures'));
     }
 
     /**
@@ -108,7 +110,8 @@ class PackageController extends Controller
         $destinationPackages = DestinationPackage::where('package_id', $package->id)->pluck('destination_id')->toArray();
         $activityPackages = ActivityPackage::where('package_id', $package->id)->pluck('activity_id')->toArray();
         $packageActivities = PackageActivity::where('package_id', $package->id)->first();
-        return view('admin.package.edit', compact('package', 'destinations', 'activities', 'packageItenary', 'packageFaqs', 'destinationPackages', 'packageActivities', 'activityPackages'));
+        $departures = Departure::all();
+        return view('admin.package.edit', compact('package', 'destinations', 'activities', 'packageItenary', 'packageFaqs', 'destinationPackages', 'packageActivities', 'activityPackages','departures'));
     }
 
     /**

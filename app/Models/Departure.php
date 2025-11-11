@@ -14,4 +14,8 @@ class Departure extends Model
     {
         return $this->hasMany(DepartureItem::class, 'departure_id');
     }
+    public function package()
+    {
+        return $this->hasOne(Package::class);
+    }
 }
