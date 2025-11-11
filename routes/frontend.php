@@ -28,7 +28,8 @@ Route::get('/activities/{slug}', [FrontendController::class, 'activitiessingle']
 Route::get('/departures/{slug}', [FrontendController::class, 'departuresingle'])->name('departuresingle');
 
 Route::get('/services/{slug}', [FrontendController::class, 'servicesingle'])->name('servicesingle');
-
+Route::get('youtube',[FrontendController::class, 'youtube'])->name('youtubelinks');
 
 Route::post('/inquiry', [ContactsController::class, 'inquiry'])->name('inquiry');
 Route::post('/pkbooking', [PackageInquiryController::class, 'pkbooking'])->name('pkbooking');
+

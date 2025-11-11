@@ -2,24 +2,53 @@
 
 @section('seo')
     @include('frontend.global.seo', [
-        'name' => $content->name ?? '',
-        'title' => $content->seo_title ?? $content->name,
-        'description' => $content->seo_description ?? '',
-        'keyword' => $content->seo_keywords ?? '',
-        'schema' => $content->seo_schema ?? '',
-        'seoimage' => $content->image ?? '',
-        'created_at' => $content->created_at,
-        'updated_at' => $content->updated_at,
-    ])
+    'name' => $content->name ?? '',
+    'title' => $content->seo_title ?? $content->name,
+    'description' => $content->seo_description ?? '',
+    'keyword' => $content->seo_keywords ?? '',
+    'schema' => $content->seo_schema ?? '',
+    'seoimage' => $content->image ?? '',
+    'created_at' => $content->created_at,
+    'updated_at' => $content->updated_at,
+])
+<style>
+
+    .text-box .description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 10; /* show only 10 lines */
+    -webkit-box-orient: vertical;
+    transition: all 0.3s ease;
+}
+
+.text-box .description.expanded {
+    -webkit-line-clamp: unset;
+}
+
+.read-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}
+
+</style>
 @endsection
 
 @section('content')
+
     @include('frontend.global.banner', [
-        'name' => $content->name,
-        'banner' => $content->banner ?? null,
-        'parentname' => 'Destinations',
-        'parentlink' => '/destinations',
-    ])
+    'name' => $content->name,
+    'banner' => $content->banner ?? null,
+    'parentname' => 'Destinations',
+    'parentlink' => '/destinations',
+])
     @if (!empty($content->image || $content->description))
         <section class="destination-details pt_80 pb_40">
             <div class="auto-container">
@@ -30,8 +59,14 @@
                                 <div class="sec-title mb_30">
                                     <span class="sub-title">About {{ $content->name }}</span>
                                 </div>
-                                <div class="text-box">
+                                {{-- <div class="text-box">
                                     {!! $content->description ?? '' !!}
+                                </div> --}}
+                                <div class="text-box position-relative">
+                                    <div class="description short-text">
+                                    {!! $content->description ?? '' !!}
+                                    </div>
+                                    <a href="javascript:void(0);" class="read-more-btn">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -102,3 +137,17 @@
         </section>
     @endif
 @endsection
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const readMoreBtn = document.querySelector('.read-more-btn');
+    const desc = document.querySelector('.description');
+
+    if (readMoreBtn && desc) {
+        readMoreBtn.addEventListener('click', function() {
+            desc.classList.toggle('expanded');
+            this.textContent = desc.classList.contains('expanded') ? 'Read Less' : 'Read More';
+        });
+    }
+});
+</script>
+

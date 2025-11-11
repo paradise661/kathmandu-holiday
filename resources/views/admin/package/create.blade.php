@@ -275,7 +275,7 @@
                                             @enderror
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <label class="form-label" for="basic-default-fullname">Price</label>
                                             <input class="form-control @error('price') is-invalid @enderror"
                                                 type="number" name="price" value="{{ old('price') }}">
@@ -287,15 +287,27 @@
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label class="form-label" for="basic-default-fullname">Per Price:
-                                                (/person)</label>
-                                            <input class="form-control @error('priceper') is-invalid @enderror"
-                                                type="text" name="priceper" value="{{ old('priceper') }}">
+                                                (/person)INR</label>
+                                            <input class="form-control @error('priceper') is-invalid @enderror" type="text" name="priceper"
+                                                value="{{ old('priceper') }}">
                                             @error('priceper')
                                                 <div class="invalid-feedback" style="display: block;">
                                                     {{ $message }}
                                                 </div>
                                             @enderror
                                         </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label" for="basic-default-fullname">Per Price:
+                                            (/person) USD</label>
+                                            <input class="form-control @error('priceperusd') is-invalid @enderror" type="text" name="priceperusd"
+                                                value="{{ old('priceperusd') }}">
+                                            @error('priceperusd')
+                                                <div class="invalid-feedback" style="display: block;">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+
 
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label" for="basic-default-fullname">Discount(%)</label>

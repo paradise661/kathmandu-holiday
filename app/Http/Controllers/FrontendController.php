@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\YoutubeLink;
 use Carbon\Carbon;
 use App\Models\Faq;
 use App\Models\News;
@@ -116,6 +117,9 @@ class FrontendController extends Controller
 
                 $departure = Departure::where('status', 1)->latest()->paginate(12);
                 return view('frontend.page.departure', compact(['content', 'departure']));
+            } elseif ($content->template == 21) {
+                $youtube = YoutubeLink::paginate(10);
+                return view('frontend.page.youtube',compact(['content','youtube']));
             } else {
                 $blogs = News::where('status', 1)->limit(5)->get();
                 $categorys = Blogcategory::where('status', 1)->limit(5)->get();

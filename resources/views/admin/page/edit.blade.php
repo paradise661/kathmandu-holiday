@@ -182,6 +182,8 @@
                                         value="19">Blog Category</option>
                                     <option class="p-3"@if ($page->template == 20) selected @endif
                                         value="20">Departure</option>
+                                    <option class="p-3"@if ($page->template == 21) selected @endif
+                                        value="21">Youtube Links</option>
                                     <option class="p-3"@if ($page->template == 16) selected @endif
                                         value="16">Sitemap</option>
                                 </select>

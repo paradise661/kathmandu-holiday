@@ -313,7 +313,7 @@
         </section>
     @endif
 
-    @if ($blogs->isNotEmpty())
+    {{-- @if ($blogs->isNotEmpty())
         <section class="news-section pt_50 pb_50">
             <div class="auto-container">
                 <div class="sec-title centred mb_50">
@@ -345,6 +345,6 @@
                 </div>
             </div>
         </section>
-    @endif
+    @endif --}}
 
 @endsection

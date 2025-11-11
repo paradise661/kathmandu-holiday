@@ -40,7 +40,8 @@
                 <div data-i18n="Accordion">Menu</div>
             </a>
         </li>
-        <li class="menu-item @if (Request::segment(2) == 'contacts' || Request::segment(2) == 'packageinquiry') {{ 'active open' }} @endif">
+        <li
+            class="menu-item @if (Request::segment(2) == 'contacts' || Request::segment(2) == 'packageinquiry') {{ 'active open' }} @endif">
             <a class="menu-link menu-toggle" href="javascript:void(0)">
                 <i class="menu-icon tf-icons bx bx-notepad"></i>
                 <div data-i18n="General Setting">Form</div>
@@ -67,7 +68,8 @@
         <!-- CMS -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">CMS</span></li>
         <!-- Cards -->
-        <li class="menu-item @if (Request::segment(2) == 'blog' || Request::segment(2) == 'blogcategory') {{ 'active open' }} @endif">
+        <li
+            class="menu-item @if (Request::segment(2) == 'blog' || Request::segment(2) == 'blogcategory') {{ 'active open' }} @endif">
             <a class="menu-link menu-toggle" href="javascript:void(0)">
                 <i class="menu-icon tf-icons bx bx-news"></i>
                 <div data-i18n="General Setting">Posts</div>
@@ -119,10 +121,12 @@
 
             </ul>
         </li>
-        <li class="menu-item @if (Request::segment(2) == 'packages' ||
-                Request::segment(2) == 'activities' ||
-                Request::segment(2) == 'destinations' ||
-                Request::segment(2) == 'departure') {{ 'active open' }} @endif">
+        <li class="menu-item @if (
+            Request::segment(2) == 'packages' ||
+            Request::segment(2) == 'activities' ||
+            Request::segment(2) == 'destinations' ||
+            Request::segment(2) == 'departure'
+        ) {{ 'active open' }} @endif">
             <a class="menu-link menu-toggle" href="javascript:void(0)">
                 <i class="menu-icon tf-icons bx bx-package"></i>
                 <div data-i18n="General Setting">Packages</div>
@@ -354,9 +358,32 @@
 
             </ul>
         </li>
+        <li class="menu-item @if (Request::segment(2) == 'youtube') {{ 'active open' }} @endif">
+            <a class="menu-link menu-toggle" href="javascript:void(0)">
+                <i class="menu-icon tf-icons bx bx-slider-alt"></i>
+                <div data-i18n="General Setting">Youtube Links</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a class="menu-link {{ Request::segment(2) == 'youtube' && Request::segment(3) == '' ? 'active' : '' }}"
+                        href="{{ route('youtube.index') }}">
+                        <i class="menu-icon tf-icons bx bx-slider-alt"></i>
+                        <div data-i18n="Accordion">All Links</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link {{ Request::segment(2) == 'youtube' && Request::segment(3) == 'create' ? 'active' : '' }}"
+                        href="{{ route('youtube.create') }}">
+                        <i class="menu-icon tf-icons bx bxs-file-plus"></i>
+                        <div data-i18n="Accordion">Create Links</div>
+                    </a>
+                </li>
 
-        <!-- General Settings  -->
-        <li class="menu-item @if (Request::segment(2) == 'setting' || Request::segment(2) == 'social' || Request::segment(2) == 'whyus') {{ 'active open' }} @endif">
+            </ul>
+
+            <!-- General Settings  -->
+        <li
+            class="menu-item @if (Request::segment(2) == 'setting' || Request::segment(2) == 'social' || Request::segment(2) == 'whyus') {{ 'active open' }} @endif">
             <a class="menu-link menu-toggle" href="javascript:void(0)">
                 <i class="menu-icon tf-icons bx bx-cog"></i>
                 <div data-i18n="General Setting">Global Setting</div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ActivityController;
+use App\Http\Controllers\Admin\YoutubeLinkController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\AuthController;
@@ -128,6 +129,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('branches', BranchController::class);
     Route::resource('departure', DepartureController::class);
     Route::resource('download', DownloadController::class);
+    Route::resource('youtube', YoutubeLinkController::class);
+
 
 
 

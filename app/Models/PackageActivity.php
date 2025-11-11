@@ -12,6 +12,7 @@ class PackageActivity extends Model
     protected $fillable = [
         'priceprefix',
         'priceper',
+        'priceperusd',
         'duration',
         'durationinfo',
         'type',
