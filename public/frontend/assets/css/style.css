@@ -4015,8 +4015,18 @@ button.ltr {
     transition: all 500ms ease;
 }
 
-.info-block-new {
-    box-shadow: none !important;
+.info-block-one .inner-box-two {
+    position: relative;
+    display: block;
+    background: #fff;
+    border-radius: 10px;
+    padding: 50px 30px 45px 30px;
+    margin-bottom: 0px;
+    transition: all 500ms ease;
+}
+
+.row-shadow {
+    box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, 0.08);
 }
 
 .info-block-two .inner-box {
@@ -4029,38 +4039,46 @@ button.ltr {
     transition: all 500ms ease;
 }
 
-.info-block-one .inner-box:hover {
+.info-block-one .inner-box:hover,
+.info-block-one .inner-box-two:hover {
     transform: translateY(-10px);
 }
 
-.info-block-one .inner-box .icon-box {
+
+.info-block-one .inner-box .icon-box,
+.info-block-one .inner-box-two .icon-box {
     position: relative;
     display: inline-block;
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
+    width: auto;
+    height: auto;
+    /* line-height: 100px; */
     text-align: center;
-    font-size: 40px;
+    padding: 25px 22px;
+    font-size: 25px;
     border-radius: 10px;
     color: var(--theme-color);
-    margin-bottom: 35px;
+    background-color: #0051911f;
+    margin-bottom: 10px;
 }
 
-.info-block-one .inner-box h3 {
+.info-block-one .inner-box h3,
+.info-block-one .inner-box-two h3 {
     position: relative;
     display: block;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 30px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
-.info-block-one .inner-box p {
+.info-block-one .inner-box p,
+.info-block-one .inner-box-two p {
     display: block;
     color: rgba(106, 106, 106, 1);
 }
 
-.info-block-one .inner-box p a {
+.info-block-one .inner-box p a,
+.info-block-one .inner-box-two p a {
     display: inline-block;
     color: rgba(106, 106, 106, 1);
 }
@@ -8487,4 +8505,25 @@ figure.logo img {
 
 .print-btn {
     border: 1px solid gray;
+}
+
+/* Fix sticky sidebar clipping */
+section,
+.container,
+.row,
+.sidebar-side,
+.tour-sidebar-two {
+    overflow: visible !important;
+}
+
+/* Optional: ensure sidebar stays visible and layered */
+.sidebar-side {
+    position: relative;
+    z-index: 10;
+}
+
+.tour-sidebar-two {
+    position: sticky;
+    top: 100px;
+    /* adjust as per your header height */
 }
