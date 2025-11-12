@@ -59,7 +59,6 @@
                                                                                                                                                             <div class="icon-box"><i class="icon-24"></i></div>
                                                                                                                                                             <h3>Location</h3>
                                                                                                                                                             <p>{{ $headOffice->location ?? '' }}</>
-
                                                                                                                                                         </div>
                                                                                                                                                     </div>
                                                                                                                                                 </div>
