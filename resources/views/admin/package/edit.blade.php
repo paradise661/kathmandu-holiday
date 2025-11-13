@@ -419,15 +419,23 @@
                                 <div class="tab-pane fade" id="nav-departure" role="tabpanel" aria-labelledby="nav-departure-tab">
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="departure_id">Departure Link</label>
-                                        <select name="departure_id" id="departure_id" class="form-control @error('departure_id') is-invalid @enderror">
+                                        <label class="form-label" for="departure">Departure</label>
+                                        {{-- <select name="departure_id" id="departure_id" class="form-control @error('departure_id') is-invalid @enderror">
                                             <option value="">Select Departure</option>
                                             @foreach($departures as $departure)
-                                                <option value="{{ $departure->id }}" {{ old('departure_id', isset($package) ? $package->departure_id : '') == $departure->id ? 'selected' : '' }}>
-                                                    {{ $departure->name }}
-                                                </option>
+                                            <option value="{{ $departure->id }}" {{ old('departure_id', isset($package) ? $package->departure_id : '') ==
+                                                $departure->id ? 'selected' : '' }}>
+                                                {{ $departure->name }}
+                                            </option>
                                             @endforeach
-                                        </select>
+                                        </select> --}}
+                                        <textarea class="form-control @error('departure_date') is-invalid @enderror" id="" name="departure_date" cols="30"
+                                            rows="10">{{ old('departure_date',$package->departure_date) }}</textarea>
+                                        @error('departure_date')
+                                            <div class="invalid-feedback" style="display: block;">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
 
                                 </div>

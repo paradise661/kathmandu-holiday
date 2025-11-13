@@ -18,6 +18,7 @@ class Package extends Model
         'status',
         'description',
         'departure_id',
+        'departure_date',
         'short_description',
         'map',
         'discount',

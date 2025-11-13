@@ -8499,6 +8499,15 @@ figure.logo img {
     align-items: center;
 }
 
+.title-section .title-head {
+    position: relative;
+}
+
+.title-section .title-head-absolute {
+    position: absolute;
+    right: 0;
+}
+
 .title-head {
     width: auto !important;
 }
@@ -8526,4 +8535,26 @@ section,
     position: sticky;
     top: 100px;
     /* adjust as per your header height */
+}
+
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--theme-color);
+    color: white;
+    /* deep navy */
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon:hover {
+    background-color: #0b0742;
+    color: white;
+    transform: translateY(-2px);
 }
