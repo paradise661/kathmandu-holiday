@@ -56,7 +56,7 @@
     <div class="title">
         <img height="40" src="{{ public_path('frontend/assets/images/khtt-logo-1-1-1.png') }}" alt="img">
 
-        <h2>{{ $package->name }}</h2>
+        <h3>{{ $package->name }}</h3>
         <p><strong>Duration:</strong> {{ $package->activity->duration ?? 'N/A' }}</p>
     </div>
 
