@@ -54,15 +54,15 @@
 
 <body>
     <div class="title">
-        <img height="100" src="{{ public_path('frontend/assets/images/khtt-logo-1-1-1.png') }}" alt="img">
+        <img height="40" src="{{ public_path('frontend/assets/images/khtt-logo-1-1-1.png') }}" alt="img">
 
-        <h1>{{ $package->name }}</h1>
+        <h2>{{ $package->name }}</h2>
         <p><strong>Duration:</strong> {{ $package->activity->duration ?? 'N/A' }}</p>
     </div>
 
     @if($package->itenaries->isNotEmpty())
         <div class="section">
-            <h2>Tour Plan</h2>
+            <h3>Tour Plan</h3>
             <table>
                 <thead>
                     <tr>
@@ -84,17 +84,17 @@
 
     @if($package->inclusions || $package->exclusions)
         <div class="section">
-            <h2>Inclusion / Exclusion</h2>
+            <h3>Inclusion / Exclusion</h3>
             <div style="display:flex; gap:30px;">
                 @if($package->inclusions)
                     <div style="flex:1;">
-                        <h3>Inclusions</h3>
+                        <h4>Inclusions</h4>
                         {!! $package->inclusions !!}
                     </div>
                 @endif
                 @if($package->exclusions)
                     <div style="flex:1;">
-                        <h3>Exclusions</h3>
+                        <h4>Exclusions</h4>
                         {!! $package->exclusions !!}
                     </div>
                 @endif
