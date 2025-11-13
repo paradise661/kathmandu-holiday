@@ -74,7 +74,7 @@
                     @foreach ($package->itenaries as $key => $itenary)
                         <tr>
                             <td>Day {{ $key + 1 }}</td>
-                            <td>{!! $itenary->description !!}</td>
+                            <td><strong>{!! $itenary->title !!}</strong>{!! $itenary->description !!}</td>
                         </tr>
                     @endforeach
                 </tbody>
