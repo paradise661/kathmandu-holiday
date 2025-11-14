@@ -7037,8 +7037,7 @@ button.ltr {
 .tour-sidebar-two .time-box,
 .tour-sidebar-two .tickets-box {
     position: relative;
-    padding: 20px 0 10px 0;
-    border-bottom: 1px solid #e5e5e5;
+    padding: 7px 0 10px 0;
 }
 
 .tour-sidebar-two .time-box label,
@@ -7054,8 +7053,9 @@ button.ltr {
 .tickets-box input,
 .tickets-box select,
 .tickets-box textarea {
-    background-color: #00519124;
+    background-color: #0051910f;
     padding: 5px;
+    color: #00000075;
     border-radius: 10px;
     width: 100%;
     font-size: 14px !important;
@@ -7068,7 +7068,7 @@ button.ltr {
     position: relative;
     font-size: 14px;
     line-height: 30px;
-    color: #000;
+    color: #00000075;
 }
 
 .tour-sidebar-two p {
