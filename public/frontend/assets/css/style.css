@@ -8558,3 +8558,15 @@ section,
     color: white;
     transform: translateY(-2px);
 }
+
+.contact-icon {
+    background-color: #00519126;
+    border-radius: 32px;
+    font-size: 22px;
+    color: #005191;
+    padding: 10px;
+}
+
+.contact-icon-container {
+    margin-bottom: 15px;
+}
