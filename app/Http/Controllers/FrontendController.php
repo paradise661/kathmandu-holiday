@@ -30,8 +30,21 @@ class FrontendController extends Controller
         $sliders = Sliders::oldest('order')->get();
         $partners = Partner::where('status', 1)->oldest('order')->get();
         $blogs = News::where('status', 1)->limit(3)->get();
+        $kailash = Package::where('status', 1)->whereHas('category', function ($q) {
+                $q->where('slug', 'kailash-tours');
+            })->get();
+        $adventure = Package::where('status', 1)->whereHas('category', function ($q) {
+                $q->where('slug', 'adventure-culture');
+            })->get();
+        $leisure = Package::where('status', 1)->whereHas('category', function ($q) {
+            $q->where('slug', 'leisure-family');
+        })->get();
+        $trekking = Package::where('status', 1)->whereHas('category', function ($q) {
+            $q->where('slug', 'trekking');
+        })->get();
+        
 
-        return view('frontend.home.index', compact(['sliders', 'partners', 'blogs']));
+        return view('frontend.home.index', compact(['sliders', 'partners', 'blogs','kailash','adventure','leisure','trekking']));
     }
 
     public function download()
