@@ -2357,7 +2357,8 @@ button.ltr {
     overflow: hidden !important;
 }
 
-.about-section .pattern-layer {
+.about-section .pattern-layer,
+.pricing-section .pattern-layer {
     position: absolute;
     left: 0px;
     bottom: 0px;
@@ -2489,6 +2490,10 @@ button.ltr {
         margin-right: 0px;
         margin-bottom: 30px;
     }
+
+    .pricing-section .pattern-layer {
+        top: 25%;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -2502,6 +2507,12 @@ button.ltr {
 
     .about-style-two .image-box .image-shape {
         display: none;
+    }
+
+    .pricing-section .pattern-layer {
+
+        top: 55%;
+
     }
 }
 
@@ -5607,6 +5618,11 @@ button.ltr {
     margin: 0px 10px;
 }
 
+.inner-cont-border {
+    border-bottom: 1px solid rgb(217, 217, 217);
+    padding-bottom: 99px;
+}
+
 .pricing-section .pricing-block {
     padding: 0px 5px;
 }
@@ -8569,4 +8585,13 @@ section,
 
 .contact-icon-container {
     margin-bottom: 15px;
+}
+
+.background-image {
+    background-image: url(http://127.0.0.1:8000/frontend/assets/images/shape/shape-1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-size: contain; */
+    background-position: bottom;
+    background-size: 100% 400px;
 }
